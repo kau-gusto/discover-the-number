@@ -5,7 +5,7 @@ from utils.text import clear
 class ChooseDifficulty:
 
     def __init__(self) -> None:
-        self.choose: int = None
+        self.choose: int = 0
 
     def _choose_difficulty(self):
         title()
