@@ -8,11 +8,8 @@ if __name__ == "__main__":
     choose_difficulty.run()
     difficulty = choose_difficulty.choose
 
-    high_number = \
-        10 if difficulty == 1 else \
-        100 if difficulty == 2 else \
-        1000 if difficulty == 2 else\
-        2
+    high_number = 10**difficulty if difficulty > 0 else 2
+    print(high_number)
     discover = DiscoverNumber(high_number)
     discover.run()
 

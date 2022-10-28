@@ -11,15 +11,14 @@ class ChooseDifficulty:
         title()
 
         print("choose the difficulty:")
-        print("(1) 0-10")
-        print("(2) 0-100")
-        print("(3) 0-1000\n")
+        print("(0) 0-2")
+        print("(n) 0-10^n\n")
 
         choose = input("")
         assert choose.isnumeric(), "choose a valid number"
 
         result = int(choose)
-        assert result >= 1 and result <= 3, "choose a number between 1 and 3"
+        assert result >= 0, "choose a number greater than or equal to zero"
 
         self.choose = result
 
