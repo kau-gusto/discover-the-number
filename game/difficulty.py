@@ -11,9 +11,9 @@ class ChooseDifficulty:
         title()
 
         print("choose the difficulty:")
-        print("(1) 1-10")
-        print("(2) 1-100")
-        print("(3) 1-1000\n")
+        print("(1) 0-10")
+        print("(2) 0-100")
+        print("(3) 0-1000\n")
 
         choose = input("")
         assert choose.isnumeric(), "choose a valid number"
