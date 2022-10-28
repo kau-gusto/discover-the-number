@@ -1,5 +1,5 @@
 from game.reutils import title
-from utils.text import clear
+from utils.text import Colors, clear
 
 
 class ChooseDifficulty:
@@ -11,14 +11,17 @@ class ChooseDifficulty:
         title()
 
         print("choose the difficulty:")
-        print("(0) 0-2")
-        print("(n) 0-10^n\n")
+        print(
+            f"{Colors.BOLD}({Colors.GREEN}0{Colors.CLEAR}{Colors.BOLD}){Colors.CLEAR} 0-2")
+        print(
+            f"{Colors.BOLD}({Colors.GREEN}n{Colors.CLEAR}{Colors.BOLD}){Colors.CLEAR} 0-10^n\n")
 
         choose = input("")
-        assert choose.isnumeric(), "choose a valid number"
+        assert choose.isdecimal(), Colors.RED + "choose a valid number" + Colors.CLEAR
 
         result = int(choose)
-        assert result >= 0, "choose a number greater than or equal to zero"
+        assert result >= 0, Colors.RED + \
+            "choose a number greater than or equal to zero" + Colors.CLEAR
 
         self.choose = result
 

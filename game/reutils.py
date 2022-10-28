@@ -1,5 +1,8 @@
-from utils.text import print_all_terminal
+from utils.text import Colors, print_all_terminal
 
 
 def title():
-    print_all_terminal(" discover the number ", "=")
+    print(Colors.BLUE, end="")
+    print_all_terminal(
+        Colors.CLEAR + Colors.BOLD + " discover the number " + Colors.CLEAR + Colors.BLUE, "=")
+    print(Colors.CLEAR, end="")

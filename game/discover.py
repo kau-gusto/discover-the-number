@@ -1,6 +1,6 @@
 from random import random
 from game.reutils import title
-from utils.text import clear
+from utils.text import Colors, clear
 
 
 class DiscoverNumber:
@@ -14,21 +14,24 @@ class DiscoverNumber:
     def _discover_number(self):
         title()
 
-        print(f"input one number ({self.small_number}-{self.high_number}):")
+        choose = input(
+            f"enter a number {Colors.BOLD + Colors.ITALIC}({self.small_number}-{self.high_number}){Colors.CLEAR}: \n")
 
-        choose = input("")
-        assert choose.isnumeric(), "choose a valid number"
+        assert choose.isnumeric(), Colors.RED + "choose a valid number" + Colors.CLEAR
 
         result = int(choose)
-        assert self.small_number < result and result < self.high_number, f"choose a number between {self.small_number} and {self.high_number}"
+        assert self.small_number < result and result < self.high_number, Colors.YELLOW + \
+            f"choose a number between {Colors.UNDERLINE}{self.small_number}{Colors.CLEAR + Colors.YELLOW} and {Colors.UNDERLINE}{self.high_number}" + Colors.CLEAR
 
         self.attempts += 1
         if (self.final_number > result):
             self.small_number = result
-            assert False, "the final number is greater than " + str(result)
+            assert False, Colors.GREEN + "the final number is greater than " + \
+                str(result) + Colors.CLEAR
         elif (self.final_number < result):
             self.high_number = result
-            assert False, "the final number is less than " + str(result)
+            assert False, Colors.GREEN + "the final number is less than " + \
+                str(result) + Colors.CLEAR
 
     def run(self):
         clear()
