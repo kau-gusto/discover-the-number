@@ -5,10 +5,10 @@ from utils.text import clear
 
 class DiscoverNumber:
     def __init__(self, high_number: int) -> None:
-        assert high_number > 2, "the largest number must be greater than 2"
+        assert high_number >= 2, "the largest number must be greater than 2"
         self.high_number = high_number
         self.small_number = 0
-        self.final_number = int(random() * high_number - 1)
+        self.final_number = int(random() * high_number - 2) + 1
         self.attempts = 0
 
     def _discover_number(self):
